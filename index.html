@@ -1,149 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <title>Portfolio</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+        
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Orbitron', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #0a0a0a;
+            background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
             color: #ffffff;
         }
-
         header {
-            background-color: #1c1c1c;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 20px;
+            background-color: #1e1e2f;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 0;
+            color: #ff6f61;
+            text-transform: uppercase;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        section {
+            padding: 50px;
             text-align: center;
         }
-
-        h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.5em;
-            margin: 0;
+        .portfolio-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 50px;
         }
-
-        nav a {
-            color: #00ffcc;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #ffcc00;
-        }
-
-        .contact-info {
-            margin: 20px 0;
-        }
-
-        .portfolio {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .portfolio-item {
-            margin: 10px;
-            width: calc(33% - 20px);
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-
-        .portfolio-item img {
+        .portfolio-gallery img {
             width: 100%;
             height: auto;
-            display: block;
-            transition: transform 0.3s;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-
-        .portfolio-item:hover img {
+        .portfolio-gallery img:hover {
             transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
         }
-
-        @media (max-width: 768px) {
-            .portfolio-item {
-                width: calc(50% - 20px);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .portfolio-item {
-                width: 100%;
-            }
-        }
-
         footer {
+            background-color: #1e1e2f;
             text-align: center;
             padding: 20px;
-            background-color: #1c1c1c;
+            position: relative;
+            bottom: 0;
+        }
+        footer a {
+            color: #ff6f61;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
         }
     </style>
 </head>
-
 <body>
     <header>
-        <h1>Sudharsan</h1>
+        <h1>Your Portfolio</h1>
         <nav>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#9150945342">9150945342</a>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
     </header>
-
+    <section id="about">
+        <h2>Welcome to My Portfolio</h2>
+        <p>I am a college student, freelance designer, and website creator passionate about crafting user-friendly and innovative designs. Explore my work below!</p>
+    </section>
     <section id="portfolio">
-        <h2>My Portfolio</h2>
-        <div class="portfolio">
-            <div class="portfolio-item">
-                <img src="img1.jpg" alt="Project 1 Description">
-            </div>
-            <div class="portfolio-item">
-                <img src="img2.jpg" alt="Project 2 Description">
-            </div>
-            <div class="portfolio-item">
-                <img src="img3.jpg" alt="Project 3 Description">
-            </div>
-            <div class="portfolio-item">
-                <img src="img4.jpg" alt="Project 4 Description">
-            </div>
-            <div class="portfolio-item">
-                <img src="img5.jpg" alt="Project 5 Description">
-            </div>
-            <div class="portfolio-item">
-                <img src="img6.jpg" alt="Project 6 Description">
-            </div>
-            <div class="portfolio-item">
-                <img src="img7.jpg" alt="Project 7 Description">
-            </div>
-            <div class="portfolio-item">
-                <img src="img8.jpg" alt="Project 8 Description">
-            </div>
-            <div class="portfolio-item">
-                <img src="img9.jpg" alt="Project 9 Description">
-            </div>
-            <div class="portfolio-item">
-                <img src="img10.jpg" alt="Project 10 Description">
-            </div>
+        <h2>My Work</h2>
+        <div class="portfolio-gallery">
+            <img src="img1.jpg" alt="Design 1">
+            <img src="img2.jpg" alt="Design 2">
+            <img src="img2.jpg" alt="Design 3">
+            <img src="img3.jpg" alt="Design 4">
+            <img src="img4.jpg" alt="Design 5">
+            <img src="https://via.placeholder.com/250" alt="Design 6">
+            <img src="https://via.placeholder.com/250" alt="Design 7">
+            <img src="https://via.placeholder.com/250" alt="Design 8">
+            <img src="https://via.placeholder.com/250" alt="Design 9">
+            <img src="https://via.placeholder.com/250" alt="Design 10">
         </div>
     </section>
-
-    <section id="contact" class="contact-info">
+    <section id="contact">
         <h2>Contact Me</h2>
-        <p>Phone: <a href="tel:9150945342" style="color: #00ffcc;">9150945342</a></p>
-        <p>Email: <a href="mailto:sudharsans573@gmail.com" style="color: #00ffcc;">sudharsans573@gmail.com</a></p>
-        <p>Instagram: <a href="https://www.instagram.com/mr.sudharsan_?igsh=MWUwZTBtZWpzbTZneA==" target="_blank" style="color: #00ffcc;">@mr.sudharsan_</a></p>
+        <p>Feel free to reach out!</p>
+        <p>Phone: <a href="tel:+1234567890">+1234567890</a></p>
+        <p>Email: <a href="mailto:yourname@gmail.com">yourname@gmail.com</a></p>
+        <p>Instagram: <a href="https://instagram.com/yourprofile" target="_blank">@yourprofile</a></p>
     </section>
-
     <footer>
-        <p>&copy; 2023 Sudharsan. All rights reserved.</p>
+        <p>&copy; 2025 Your Name | Designed with ❤️</p>
     </footer>
 </body>
-
 </html>
